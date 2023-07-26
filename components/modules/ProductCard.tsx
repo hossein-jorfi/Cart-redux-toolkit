@@ -1,5 +1,7 @@
 import { shorter } from "@/utils/helper";
 import Image from "next/image";
+import Colors from "../elements/Colors";
+import Link from "next/link";
 
 type ProductCardProps = {
   title: string;
@@ -14,7 +16,13 @@ type ProductCardProps = {
   };
 };
 
-const ProductCard = ({ title, image }: ProductCardProps) => {
+const ProductCard = ({
+  title,
+  image,
+  category,
+  price,
+  id,
+}: ProductCardProps) => {
   return (
     <div className="bg-stone-50 rounded-lg p-3">
       <div className="mx-auto h-2/3 rounded-lg overflow-hidden">
@@ -29,7 +37,19 @@ const ProductCard = ({ title, image }: ProductCardProps) => {
           style={{ width: "100%", height: "100%" }}
         />
       </div>
-      <p>{shorter(title)}</p>
+      <div className="flex flex-col justify-between h-1/3">
+        <div>
+          <div className="flex justify-between mt-3 items-center">
+            <p className="hidden sm:block text-sm text-slate-500">{category}</p>
+            <Colors />
+          </div>
+          <p className="text-slate-800 mt-3">{shorter(title)}</p>
+          <p className="text-orange-600">${price}</p>
+        </div>
+        <Link href={`/product/${id}`} className="border text-md border-orange-600 text-orange-600 p-2 rounded-lg text-center hover:bg-orange-600 hover:text-white cursor-pointer transition-all">
+          Details
+        </Link>
+      </div>
     </div>
   );
 };
