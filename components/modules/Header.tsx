@@ -32,7 +32,7 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <div className="bg-gray-200 w-2/3 flex p-3">
+        <div className="bg-gray-200 w-2/3 flex p-3 rounded-md">
           <Image
             src={serchIcon}
             alt="serchIcon"

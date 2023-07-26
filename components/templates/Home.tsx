@@ -3,6 +3,7 @@ import { fetchProdcuts } from "@/redux/features/shop/shopSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { shopProduct } from "@/types/shopTypes";
+import DextopSort from "../modules/DextopSort";
 
 type shopType = {
   loading: boolean;
@@ -11,13 +12,14 @@ type shopType = {
 };
 
 const Home = () => {
-//   const shop: shopType = useSelector((state: any) => state.shop);
-//   const dispath = useDispatch();
-//   useEffect(() => {
-//     dispath(fetchProdcuts() as any);
-//   }, []);
+  // const shop: shopType = useSelector((state: any) => state.shop);
+  // const dispath = useDispatch();
+  // useEffect(() => {
+  //   dispath(fetchProdcuts() as any);
+  // }, []);
   return (
     <div className="xl:container px-4 sm:px-8">
+      <DextopSort />
       Home
       {/* {shop.loading ? (
         <p>LOADING...</p>
