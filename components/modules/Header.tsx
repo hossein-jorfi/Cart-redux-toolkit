@@ -9,7 +9,6 @@ import Image from "next/image";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
-  console.log(isClicked)
   const menuItems = [
     { href: "#", title: "Home" },
     { href: "#", title: "About" },
@@ -34,7 +33,13 @@ const Header = () => {
           ))}
         </div>
         <div className="bg-gray-200 w-2/3 flex p-3">
-          <Image src={serchIcon} alt="serchIcon" className={`${isClicked && "rotate-[360deg]"} transition-all ease-in-out duration-500`} />
+          <Image
+            src={serchIcon}
+            alt="serchIcon"
+            className={`${
+              isClicked && "rotate-[360deg]"
+            } transition-all ease-in-out duration-500`}
+          />
           <input
             onFocus={() => setIsClicked(true)}
             onBlur={() => setIsClicked(false)}
