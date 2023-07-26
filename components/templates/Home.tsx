@@ -1,37 +1,38 @@
-"use client";
-import { fetchProdcuts } from "@/redux/features/shop/shopSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { shopProduct } from "@/types/shopTypes";
 import DextopSort from "../modules/DextopSort";
-
-type shopType = {
-  loading: boolean;
-  products: shopProduct[];
-  error: string;
-};
+import DextopSideBar from "../modules/DextopSideBar";
+import HomeProducts from "../modules/HomeProducts";
 
 const Home = () => {
-  // const shop: shopType = useSelector((state: any) => state.shop);
-  // const dispath = useDispatch();
-  // useEffect(() => {
-  //   dispath(fetchProdcuts() as any);
-  // }, []);
   return (
-    <div className="xl:container px-4 sm:px-8">
-      <DextopSort />
-      Home
-      {/* {shop.loading ? (
-        <p>LOADING...</p>
-      ) : (
-        shop.products.map((item) => (
-          <div key={item.id}>
-            <p>{item.title}</p>
+    <>
+      {/* Dextop */}
+      <div className="hidden md:block xl:container px-4 sm:px-8">
+        <div>
+          <DextopSort />
+        </div>
+        <div className="grid grid-cols-12 gap-5 mt-5">
+          <div className="col-span-3 xl:col-span-2">
+            <DextopSideBar />
           </div>
-        ))
-      )}
-      {shop.error && <p>*ERROR*</p>} */}
-    </div>
+          <div className="col-span-9 xl:col-span-10">
+            <div className=" rounded-lg">
+              <HomeProducts />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden px-4 sm:px-10">
+        <div className="flex justify-between">
+          <div>sort</div>
+          <div>filter</div>
+        </div>
+        <div>
+          <HomeProducts />
+        </div>
+      </div>
+    </>
   );
 };
 

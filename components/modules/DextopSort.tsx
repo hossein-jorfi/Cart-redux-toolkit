@@ -20,7 +20,9 @@ const DextopSort = () => {
         <div
           key={item.id}
           onClick={() => setSelectedItem(item.id)}
-          className={`${selectedItem === item.id && "opacity-100"} opacity-50 cursor-pointer`}
+          className={`${
+            selectedItem === item.id ? "opacity-95" : null
+          } opacity-50 cursor-pointer`}
         >
           {item.title}
         </div>
