@@ -3,6 +3,7 @@ import DextopSideBar from "../modules/DextopSideBar";
 import HomeProducts from "../modules/HomeProducts";
 import MobileFilter from "../modules/mobile/MobileFilter";
 import MobileFavorite from "../modules/mobile/MobileFavorite";
+import MobileBottomBar from "../modules/mobile/MobileBottomBar";
 
 const Home = () => {
   return (
@@ -37,6 +38,7 @@ const Home = () => {
         <div>
           <HomeProducts />
         </div>
+        <MobileBottomBar />
       </div>
     </>
   );
