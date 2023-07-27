@@ -15,7 +15,7 @@ const Header = () => {
     { href: "#", title: "Weblog" },
   ];
   return (
-    <div className="bg-gray-100 sm:bg-stone-50 py-10 sm:shadow-md">
+    <div className="bg-gray-100 sm:bg-white py-10 sm:shadow-md sm:fixed top-0 w-full z-10">
       {/* Dextop */}
       <div className="xl:container sm:px-8 hidden sm:flex justify-start items-center space-x-10">
         <div className="text-xl md:text-3xl text-orange-600 w-fit font-bold">
