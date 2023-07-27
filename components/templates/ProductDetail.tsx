@@ -26,7 +26,7 @@ const ProductDetail = ({ productId }: ProductDetailProps) => {
   return (
     <>
       <DextopProductDetail product={product as shopProduct} />
-      <MobileProductDetail />
+      <MobileProductDetail product={product as shopProduct} />
     </>
   );
 };

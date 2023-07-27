@@ -12,12 +12,12 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: any
+  params: any;
 }) {
-  console.log(params)
+  console.log(params);
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100 sm:mt-40`}>

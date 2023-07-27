@@ -1,5 +1,3 @@
-import React from "react";
-
 type AddBox = {
   price: number;
 };
@@ -15,15 +13,15 @@ const AddBox = ({ price }: AddBox) => {
   return (
     <div className="bg-stone-100 rounded p-3 space-y-8 ml-5 mt-4">
       <div className="flex flex-col justify-between items-start text-slate-600 space-y-2">
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 font-medium">
           <Image src={shopSVG} alt="icon" />
           <p>Amazon</p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 font-medium">
           <Image src={shieldSVG} alt="icon" />
           <p>Warranty</p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 font-medium">
           <Image src={truckSVG} alt="icon" />
           <p>On time</p>
         </div>

@@ -13,7 +13,6 @@ const Header = () => {
   const params = useParams();
   const router = useRouter()
   const isInDetail = params.productId;
-  console.log(isInDetail);
   const [isClicked, setIsClicked] = useState(false);
   const menuItems = [
     { href: "#", title: "Home" },
@@ -59,7 +58,7 @@ const Header = () => {
         className={`sm:hidden container flex justify-between items-center bg-opacity-30 backdrop-blur w-full ${isInDetail && "flex-row-reverse"}`}
       >
         {isInDetail ? (
-          <div onClick={() => router.back()} className="bg-white p-2.5 rounded-md cursor-pointer">
+          <div onClick={() => router.back()} className="bg-white shadow-md p-2.5 rounded-md cursor-pointer">
             <Image className="font-bold" src={arrowSVG} alt="serchIcon" />
           </div>
         ) : (
@@ -70,7 +69,7 @@ const Header = () => {
         <div className="text-slate-800 text-lg font-bold">
           {isInDetail ? "Product" : "Products"}
         </div>
-        <div className="bg-white p-1 rounded-md cursor-pointer">
+        <div className="shadow-lg bg-white p-1 rounded-md cursor-pointer">
           <Image src={serchIcon} alt="serchIcon" />
         </div>
       </div>
