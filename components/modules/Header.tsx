@@ -19,7 +19,7 @@ const Header = () => {
       {/* Dextop */}
       <div className="xl:container sm:px-8 hidden sm:flex justify-start items-center space-x-10">
         <div className="text-xl md:text-3xl text-orange-600 w-fit font-bold">
-          COMPANY
+          <Link href="/">COMPANY</Link>
         </div>
         <div className="justify-between w-full space-x-10 text-md md:text-lg">
           {menuItems.map((item) => (
@@ -50,7 +50,9 @@ const Header = () => {
       </div>
       {/* Mobile */}
       <div className="sm:hidden container flex justify-between items-center">
-        <div className="text-xl text-orange-600 font-bold">LOGO</div>
+        <div className="text-xl text-orange-600 font-bold">
+          <Link href="/">LOGO</Link>
+        </div>
         <div className="text-slate-800 text-lg font-bold">Products</div>
         <div className="bg-white p-1 rounded-md cursor-pointer">
           <Image src={serchIcon} alt="serchIcon" />
