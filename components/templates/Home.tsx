@@ -1,6 +1,8 @@
 import DextopSort from "../modules/DextopSort";
 import DextopSideBar from "../modules/DextopSideBar";
 import HomeProducts from "../modules/HomeProducts";
+import MobileFilter from "../modules/mobile/MobileFilter";
+import MobileFavorite from "../modules/mobile/MobileFavorite";
 
 const Home = () => {
   return (
@@ -24,9 +26,13 @@ const Home = () => {
 
       {/* Mobile */}
       <div className="md:hidden px-4 sm:px-10">
-        <div className="flex justify-between">
-          <div>sort</div>
-          <div>filter</div>
+        <div className="flex justify-between gap-4 my-5">
+          <div className="w-full">
+            <MobileFavorite />
+          </div>
+          <div className="w-full">
+            <MobileFilter />
+          </div>
         </div>
         <div>
           <HomeProducts />
