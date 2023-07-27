@@ -8,6 +8,7 @@ import React from "react";
 import shopSVG from "@/public/icons/AddBox/shop.svg";
 import shieldSVG from "@/public/icons/AddBox/Vector.svg";
 import truckSVG from "@/public/icons/AddBox/truck-time.svg";
+import AddBottom from "@/components/elements/productDetails/AddBottom";
 
 type MobileProductDetailProps = {
   product: shopProduct;
@@ -16,6 +17,7 @@ type MobileProductDetailProps = {
 const MobileProductDetail = ({ product }: MobileProductDetailProps) => {
   return (
     <div className="sm:hidden container">
+      <AddBottom price={product.price} />
       <MobileIndent />
       <div className="flex justify-center items-center mt-6">
         <Image
@@ -49,7 +51,6 @@ const MobileProductDetail = ({ product }: MobileProductDetailProps) => {
           <p>Warranty</p>
         </div>
       </div>
-
       <div className="space-y-6 mt-20">
         <div className="space-y-3 bg-white p-7 rounded-lg">
           <h3 className="text-xl text-slate-600">Reviews of this product</h3>

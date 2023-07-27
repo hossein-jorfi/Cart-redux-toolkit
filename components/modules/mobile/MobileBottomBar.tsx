@@ -13,7 +13,7 @@ const MobileBottomBar = () => {
     { id: 0, icon: home },
   ];
   return (
-    <div className="fixed bottom-0 left-0 px-6 sm:px-20 py-7 border-t-4 rounded-t-lg flex justify-between items-center bg-white w-full">
+    <div className="fixed bottom-0 left-0 px-6 sm:px-20 py-7 shadow-[0_0_20px_-10px_rgba(1,1,1,1)] rounded-t-lg flex justify-between items-center bg-white w-full">
       {items.map((item) => (
         <div key={item.id}>
           <Image src={item.icon} alt="icon" />
