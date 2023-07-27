@@ -24,7 +24,7 @@ const ProductCard = ({
   id,
 }: ProductCardProps) => {
   return (
-    <div className="bg-stone-50 rounded-lg p-3">
+    <div className="bg-white rounded-lg p-3">
       <div className="mx-auto h-2/3 rounded-lg overflow-hidden">
         <Image
           unoptimized

@@ -12,7 +12,7 @@ const DextopSort = () => {
     { id: 3, title: "Cheapest" },
   ];
   return (
-    <div className="bg-stone-50 mt-4 p-2 rounded-md flex items-center space-x-4">
+    <div className="bg-white mt-4 p-2 rounded-md flex items-center space-x-4">
       <div>
         <Image src={sortSVG} alt="sortSVG" />
       </div>
