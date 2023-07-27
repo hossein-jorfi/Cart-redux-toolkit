@@ -4,7 +4,7 @@ type Images = {
 };
 const Images = ({ image }: Images) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center w-full">
       <Image
         loader={() => image}
         src={image}
@@ -12,7 +12,7 @@ const Images = ({ image }: Images) => {
         width={200}
         height={200}
       />
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between mt-4 space-x-4">
         <div className="border-2 rounded-lg cursor-pointer p-2">
           <Image
             loader={() => image}

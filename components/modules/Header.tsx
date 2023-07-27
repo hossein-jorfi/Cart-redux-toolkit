@@ -1,13 +1,19 @@
 "use client";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+import arrowSVG from "@/public/icons/arrow-up.svg";
 
 // Icons
 import serchIcon from "@/public/icons/search-normal.svg";
 import Image from "next/image";
 
 const Header = () => {
+  const params = useParams();
+  const router = useRouter()
+  const isInDetail = params.productId;
+  console.log(isInDetail);
   const [isClicked, setIsClicked] = useState(false);
   const menuItems = [
     { href: "#", title: "Home" },
@@ -49,11 +55,21 @@ const Header = () => {
         </div>
       </div>
       {/* Mobile */}
-      <div className="sm:hidden container flex justify-between items-center">
-        <div className="text-xl text-orange-600 font-bold">
-          <Link href="/">LOGO</Link>
+      <div
+        className={`sm:hidden container flex justify-between items-center bg-opacity-30 backdrop-blur w-full ${isInDetail && "flex-row-reverse"}`}
+      >
+        {isInDetail ? (
+          <div onClick={() => router.back()} className="bg-white p-2.5 rounded-md cursor-pointer">
+            <Image className="font-bold" src={arrowSVG} alt="serchIcon" />
+          </div>
+        ) : (
+          <div className="text-xl text-orange-600 font-bold">
+            <Link href="/">LOGO</Link>
+          </div>
+        )}
+        <div className="text-slate-800 text-lg font-bold">
+          {isInDetail ? "Product" : "Products"}
         </div>
-        <div className="text-slate-800 text-lg font-bold">Products</div>
         <div className="bg-white p-1 rounded-md cursor-pointer">
           <Image src={serchIcon} alt="serchIcon" />
         </div>

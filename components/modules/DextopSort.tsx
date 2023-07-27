@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import sortSVG from "@/public/icons/Sort.svg";
 import Image from "next/image";
+import arrowSVG from "@/public/icons/Arrow---Left-2.svg"
 
 type DextopSortProps = {
   detail: boolean;
@@ -20,7 +21,9 @@ const DextopSort = ({ detail, category, title }: DextopSortProps) => {
   if (detail) {
     return (
       <div className="bg-white mt-4 p-2 rounded-md flex items-center space-x-4">
-        {category} - {title?.split(" ")[0]} {title?.split(" ")[1]}
+        <p className="text-orange-600">{category}</p>
+        <Image className="rotate-180" src={arrowSVG} alt="icon arrow" />
+        <p>{title?.split(" ")[0]}</p>
       </div>
     );
   }
