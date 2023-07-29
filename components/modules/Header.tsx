@@ -55,7 +55,7 @@ const Header = () => {
         </div>
         <Link href="/cart" className="text-xl relative">
           <Image src={cartPNG} alt="cart icon" />
-          <div className="absolute text-white -top-1 cursor-pointer -right-1 text-sm px-1 py-0 bg-orange-400 rounded-full">
+          <div className="absolute text-white -top-1 cursor-pointer -right-1 text-sm px-1 py-0 bg-orange-500 rounded-full">
             10
           </div>
         </Link>
