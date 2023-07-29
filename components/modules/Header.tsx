@@ -3,15 +3,16 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
-import arrowSVG from "@/public/icons/arrow-up.svg";
+import Image from "next/image";
 
 // Icons
 import serchIcon from "@/public/icons/search-normal.svg";
-import Image from "next/image";
+import arrowSVG from "@/public/icons/arrow-up.svg";
+import cartPNG from "@/public/icons/cart-24.png";
 
 const Header = () => {
   const params = useParams();
-  const router = useRouter()
+  const router = useRouter();
   const isInDetail = params.productId;
   const [isClicked, setIsClicked] = useState(false);
   const menuItems = [
@@ -52,13 +53,24 @@ const Header = () => {
             className="bg-inherit outline-none pl-6 text-slate-800 placeholder:text-slate-500 w-full"
           />
         </div>
+        <Link href="/cart" className="text-xl relative">
+          <Image src={cartPNG} alt="cart icon" />
+          <div className="absolute text-white -top-1 cursor-pointer -right-1 text-sm px-1 py-0 bg-orange-400 rounded-full">
+            10
+          </div>
+        </Link>
       </div>
       {/* Mobile */}
       <div
-        className={`sm:hidden container flex justify-between items-center bg-opacity-30 backdrop-blur w-full ${isInDetail && "flex-row-reverse"}`}
+        className={`sm:hidden container flex justify-between items-center bg-opacity-30 backdrop-blur w-full ${
+          isInDetail && "flex-row-reverse"
+        }`}
       >
         {isInDetail ? (
-          <div onClick={() => router.back()} className="bg-white shadow-md p-2.5 rounded-md cursor-pointer">
+          <div
+            onClick={() => router.back()}
+            className="bg-white shadow-md p-2.5 rounded-md cursor-pointer"
+          >
             <Image className="font-bold" src={arrowSVG} alt="serchIcon" />
           </div>
         ) : (
