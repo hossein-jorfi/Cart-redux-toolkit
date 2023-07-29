@@ -9,4 +9,5 @@ export type shopProduct = {
     rate: number;
     count: number;
   };
+  count?: number
 };

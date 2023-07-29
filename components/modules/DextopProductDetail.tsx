@@ -24,7 +24,7 @@ const DextopProductDetail = ({ product }: DextopProductDetail) => {
             <Images image={product.image} />
             <div>
               <TextsDetails {...product} />
-              <AddBox {...product} />
+              <AddBox product={product} />
             </div>
           </div>
           <div className="space-y-6 mt-20">

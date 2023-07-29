@@ -1,5 +1,7 @@
+"use client";
+import { useDispatch, useSelector } from "react-redux";
 type AddBox = {
-  price: number;
+  product: shopProduct;
 };
 
 // Icons
@@ -8,8 +10,16 @@ import shieldSVG from "@/public/icons/AddBox/Vector.svg";
 import truckSVG from "@/public/icons/AddBox/truck-time.svg";
 import Image from "next/image";
 import { shopProduct } from "@/types/shopTypes";
+import { addProduct } from "@/redux/features/cart/cartSlice";
 
-const AddBox = ({ price }: AddBox) => {
+const AddBox = ({ product }: AddBox) => {
+  const cart = useSelector((store: any) => store.cart);
+  const dispath = useDispatch();
+  const clickHandler = () => {
+    console.log(product)
+    dispath(addProduct(product));
+    console.log(cart)
+  };
   return (
     <div className="bg-stone-100 rounded p-3 space-y-8 ml-5 mt-4">
       <div className="flex flex-col justify-between items-start text-slate-600 space-y-2">
@@ -27,8 +37,13 @@ const AddBox = ({ price }: AddBox) => {
         </div>
       </div>
       <div className="space-y-2">
-        <p className="text-orange-600">$ {price}</p>
-        <button className="py-3 w-full rounded bg-orange-500 text-white">Add To Cart</button>
+        <p className="text-orange-600">$ {product.price}</p>
+        <button
+          onClick={clickHandler}
+          className="py-3 w-full rounded bg-orange-500 text-white"
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );
