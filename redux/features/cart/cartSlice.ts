@@ -19,6 +19,7 @@ const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.totalCount++;
+      state.totalPrice += action.payload.price;
       if (state.products.find((i) => i.id === action.payload.id)) {
         state.products.map((item) => {
           if (item.id === action.payload.id) {
@@ -30,6 +31,8 @@ const cartSlice = createSlice({
       }
     },
     removeProduct: (state, action) => {
+      state.totalCount--;
+      state.totalPrice -= action.payload.price;
       const selectedItem = state.products.find(
         (item) => item.id === action.payload.id
       );
