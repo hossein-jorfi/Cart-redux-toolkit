@@ -21,11 +21,25 @@ const DextopCart = () => {
         {cart.products.length === 0 ? (
           <p>Cart is empty</p>
         ) : (
-          cart.products.map(item => <CartCard key={item.id} product={item} />)
+          cart.products.map((item) => <CartCard key={item.id} product={item} />)
         )}
       </div>
 
-      <div className="col-span-3 rounded p-5 bg-white">box</div>
+      <div className="col-span-3 rounded p-5 bg-white space-y-10">
+        <div className="flex justify-between">
+          <p className="text-slate-700">Total Price: </p>
+          <p className="text-orange-600">${cart.totalPrice}</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="text-slate-700">Discount:</p>
+          <p className="text-orange-600">$0</p>
+        </div>
+      </div>
+      <div className="col-span-9 botder"></div>
+      <div className="col-span-3 space-y-2">
+            <button className="w-full p-3 rounded bg-orange-500 text-white">Continue shopping</button>
+            <button className="w-full p-3 rounded border border-orange-500 text-orange-600">Clear Cart</button>
+      </div>
     </div>
   );
 };
