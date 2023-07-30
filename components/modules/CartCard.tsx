@@ -12,7 +12,7 @@ type CartCardProps = {
 
 const CartCard = ({ product }: CartCardProps) => {
   return (
-    <div className="flex space-x-10 bg-white p-3">
+    <div className="flex space-x-10 bg-white p-3 rounded">
       <div className="space-x-3 border p-1 rounded w-32 h-32 flex justify-center items-center">
         <Image
           src={product.image}

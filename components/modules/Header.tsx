@@ -1,5 +1,5 @@
 "use client";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
@@ -15,7 +15,9 @@ import { cartSliceType } from "@/redux/features/cart/cartSlice";
 const Header = () => {
   const params = useParams();
   const router = useRouter();
+  const path = usePathname();
   const isInDetail = params.productId;
+  const isInPath = path === "/cart" ? true : false;
   const [isClicked, setIsClicked] = useState(false);
   const menuItems = [
     { href: "#", title: "Home" },
@@ -84,7 +86,7 @@ const Header = () => {
           </div>
         )}
         <div className="text-slate-800 text-lg font-bold">
-          {isInDetail ? "Product" : "Products"}
+          {isInPath ? "Cart" : isInDetail ? "Product" : "Products"}
         </div>
         <div className="shadow-lg bg-white p-1 rounded-md cursor-pointer">
           <Image src={serchIcon} alt="serchIcon" />
