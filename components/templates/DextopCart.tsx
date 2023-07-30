@@ -37,8 +37,12 @@ const DextopCart = () => {
       </div>
       <div className="col-span-9 botder"></div>
       <div className="col-span-3 space-y-2">
-            <button className="w-full p-3 rounded bg-orange-500 text-white">Continue shopping</button>
-            <button className="w-full p-3 rounded border border-orange-500 text-orange-600">Clear Cart</button>
+        <button className="w-full p-3 rounded bg-orange-500 text-white">
+          Continue
+        </button>
+        <button className="w-full p-3 rounded border border-orange-500 text-orange-600">
+          Clear Cart
+        </button>
       </div>
     </div>
   );
