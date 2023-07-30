@@ -4,11 +4,13 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
 // Icons
 import serchIcon from "@/public/icons/search-normal.svg";
 import arrowSVG from "@/public/icons/arrow-up.svg";
 import cartPNG from "@/public/icons/cart-24.png";
+import { cartSliceType } from "@/redux/features/cart/cartSlice";
 
 const Header = () => {
   const params = useParams();
@@ -20,6 +22,9 @@ const Header = () => {
     { href: "#", title: "About" },
     { href: "#", title: "Weblog" },
   ];
+
+  const cart = useSelector((store: any) => store.cart as cartSliceType);
+
   return (
     <div className="bg-gray-100 sm:bg-white py-10 sm:shadow-md sm:fixed top-0 w-full z-10">
       {/* Dextop */}
@@ -56,7 +61,7 @@ const Header = () => {
         <Link href="/cart" className="text-xl relative">
           <Image src={cartPNG} alt="cart icon" />
           <div className="absolute text-white -top-1 cursor-pointer -right-1 text-sm px-1 py-0 bg-orange-500 rounded-full">
-            10
+            {cart.totalCount}
           </div>
         </Link>
       </div>

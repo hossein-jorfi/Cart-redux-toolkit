@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { shopProduct } from "@/types/shopTypes";
 
-const initialState: {
+export type cartSliceType = {
   products: shopProduct[];
   totalCount: number;
   totalPrice: number;
-} = {
+};
+
+const initialState: cartSliceType = {
   products: [],
   totalCount: 0,
   totalPrice: 0,

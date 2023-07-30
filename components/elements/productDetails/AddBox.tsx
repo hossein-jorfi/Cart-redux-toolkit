@@ -8,13 +8,12 @@ type AddBox = {
 import shopSVG from "@/public/icons/AddBox/shop.svg";
 import shieldSVG from "@/public/icons/AddBox/Vector.svg";
 import truckSVG from "@/public/icons/AddBox/truck-time.svg";
-import trashPNG from "@/public/icons/AddBox/trash.png"
+import trashPNG from "@/public/icons/AddBox/trash.png";
 
 // Others
 import Image from "next/image";
 import { shopProduct } from "@/types/shopTypes";
 import { addProduct, removeProduct } from "@/redux/features/cart/cartSlice";
-import { useEffect } from "react";
 
 const AddBox = ({ product }: AddBox) => {
   const cart = useSelector((store: any) => store.cart);
@@ -22,17 +21,13 @@ const AddBox = ({ product }: AddBox) => {
   const productInCart: shopProduct = cart.products.find(
     (item: any) => item.id === product.id
   );
-  useEffect(() => {
-    console.log(productInCart);
-  }, []);
+  
   const clickHandler = () => {
     dispath(addProduct(product));
-    console.log(cart);
   };
 
   const removeHandler = () => {
     dispath(removeProduct(product));
-    console.log(cart);
   };
 
   return (
@@ -63,14 +58,18 @@ const AddBox = ({ product }: AddBox) => {
         ) : (
           <button className="py-3 px-3 w-fit rounded bg-orange-500 text-white flex justify-center items-center space-x-10">
             {productInCart.count === 1 ? (
-              <span onClick={removeHandler}>
-                <Image src={trashPNG} alt="trash" />
+              <span onClick={removeHandler} className="w-6 text-white">
+                <Image src={trashPNG} alt="trash" className="text-white" />
               </span>
             ) : (
-              <span onClick={removeHandler}>-</span>
+              <span className="text-2xl" onClick={removeHandler}>
+                -
+              </span>
             )}
             <span>{productInCart.count}</span>
-            <span onClick={clickHandler}>+</span>
+            <span className="text-2xl" onClick={clickHandler}>
+              +
+            </span>
           </button>
         )}
       </div>
