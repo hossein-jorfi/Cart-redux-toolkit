@@ -17,7 +17,7 @@ type MobileProductDetailProps = {
 const MobileProductDetail = ({ product }: MobileProductDetailProps) => {
   return (
     <div className="sm:hidden container">
-      <AddBottom price={product.price} />
+      <AddBottom product={product} />
       <MobileIndent />
       <div className="flex justify-center items-center mt-6">
         <Image
