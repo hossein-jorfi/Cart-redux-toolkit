@@ -2,6 +2,7 @@ import { shorter } from "@/utils/helper";
 import Image from "next/image";
 import Colors from "../elements/Colors";
 import Link from "next/link";
+import Like from "../elements/Like";
 
 type ProductCardProps = {
   title: string;
@@ -25,7 +26,8 @@ const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <div className="bg-white rounded-lg p-3">
-      <div className="mx-auto h-2/3 rounded-lg overflow-hidden">
+      <div className="mx-auto h-2/3 rounded-lg overflow-hidden relative">
+        <Like />
         <Image
           unoptimized
           loader={() => image}
@@ -46,7 +48,10 @@ const ProductCard = ({
           <p className="text-slate-800 mt-3">{shorter(title)}</p>
           <p className="text-orange-600">${price}</p>
         </div>
-        <Link href={`/product/${id}`} className="border text-md border-orange-600 text-orange-600 p-2 rounded-lg text-center hover:bg-orange-600 hover:text-white cursor-pointer transition-all">
+        <Link
+          href={`/product/${id}`}
+          className="border text-md border-orange-600 text-orange-600 p-2 rounded-lg text-center hover:bg-orange-600 hover:text-white cursor-pointer transition-all"
+        >
           Details
         </Link>
       </div>

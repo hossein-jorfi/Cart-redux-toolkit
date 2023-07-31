@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const MobileBottomBar = () => {
   const items = [
-    { id: 3, icon: heart, href: "#" },
+    { id: 3, icon: heart, href: "/likes" },
     { id: 2, icon: bag, href: "/cart" },
     { id: 1, icon: catrgory, href: "#" },
     { id: 0, icon: home, href: "/" },
