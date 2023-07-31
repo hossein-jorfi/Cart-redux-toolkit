@@ -21,7 +21,7 @@ const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
   const menuItems = [
     { href: "#", title: "Home" },
-    { href: "/likes", title: "Liked Products" },
+    { href: "#", title: "About" },
     { href: "#", title: "Weblog" },
   ];
 

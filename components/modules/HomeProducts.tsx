@@ -22,7 +22,7 @@ const HomeProducts = () => {
         <p>loading...</p>
       ) : (
         shop.products.map((item) => (
-          <ProductCard key={item.id} {...item} />
+          <ProductCard key={item.id} {...item} product={item} />
         ))
       )}
       {shop.error && <p>*ERROR*</p>}

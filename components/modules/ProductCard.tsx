@@ -3,8 +3,10 @@ import Image from "next/image";
 import Colors from "../elements/Colors";
 import Link from "next/link";
 import Like from "../elements/Like";
+import { shopProduct } from "@/types/shopTypes";
 
 type ProductCardProps = {
+  product: shopProduct;
   title: string;
   id: number;
   price: number;
@@ -18,6 +20,7 @@ type ProductCardProps = {
 };
 
 const ProductCard = ({
+  product,
   title,
   image,
   category,
