@@ -1,14 +1,13 @@
 "use client";
 import { cartSliceType } from "@/redux/features/cart/cartSlice";
 import { useSelector } from "react-redux";
-import CartCard from "../modules/CartCard";
 import MobileCartCard from "../modules/mobile/MobileCartCard";
 import MobileBottomBar from "../modules/mobile/MobileBottomBar";
 
 const MobileCart = () => {
   const cart: cartSliceType = useSelector((store: any) => store.cart);
   return (
-    <div className="sm:hidden">
+    <div className="sm:hidden mb-32">
       <div className="sm:hidden px-4 space-y-4">
         {cart.products.length > 0 ? (
           cart.products.map((item) => (
