@@ -17,7 +17,6 @@ export default function RootLayout({
   children: React.ReactNode;
   params: any;
 }) {
-  console.log(params);
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100 sm:mt-40`}>
